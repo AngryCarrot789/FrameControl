@@ -1,0 +1,59 @@
+﻿<Window x:Class="FrameControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrameControl"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1280"
+        Style="{StaticResource CustomWindowStyle}">
+    <DockPanel Margin="5">
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="291*"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="959*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="200"/>
+                </Grid.RowDefinitions>
+                <GroupBox Header="Output Details">
+                    <Image x:Name="ImageFrame"/>
+                </GroupBox>
+                <GroupBox Header="Output Details" Margin="0,5,0,0" Grid.Row="1"/>
+            </Grid>
+            <GridSplitter Background="Transparent" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <GroupBox>
+                    <GroupBox.Header>
+                        <TextBlock Background="Transparent" Text="Inputs">
+                            <TextBlock.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Image source (PNG, JPEG, etc)"/>
+                                    <MenuItem Header="Video source (MP4, etc)"/>
+                                    <Separator Style="{StaticResource MenuItemSeparator}"/>
+                                    <MenuItem Header="Vidoe URL Input"/>
+                                    <Separator Style="{StaticResource MenuItemSeparator}"/>
+                                    <MenuItem Header="FrameControl Live input (Local Memory)"/>
+                                    <MenuItem Header="FrameControl Live input (Serial Input)"/>
+                                    <MenuItem Header="FrameControl Live input (TCP)"/>
+                                </ContextMenu>
+                            </TextBlock.ContextMenu>
+                        </TextBlock>
+                    </GroupBox.Header>
+                    <Grid>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Outputs" Grid.Row="2"/>
+                <GridSplitter Background="Transparent" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1"/>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Window>

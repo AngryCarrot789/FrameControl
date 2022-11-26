@@ -1,0 +1,11 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:base="clr-namespace:FrameControl.Dialogs">
+    <Style x:Key="ConfirmButton" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Command" Value="{Binding ConfirmCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type base:DialogBase}}}"/>
+    </Style>
+
+    <Style x:Key="CancelButton" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Command" Value="{Binding CancelCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type base:DialogBase}}}"/>
+    </Style>
+</ResourceDictionary>
